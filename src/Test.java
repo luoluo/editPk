@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.*;
 class EditPK {
 	private int _score, _wrong;
 	EditPK(){
@@ -9,15 +10,28 @@ class EditPK {
 	}
 	int gaming(){
 		while(_wrong > 0){
-			System.out.println("3\n");		
 			getAndCheckInput();
 		}
 		return _score;	//实现输出字符并匹配；	
 	}
 	void getAndCheckInput(){
-		_wrong--;
-		_score++;
+		putOut();
+		boolean flag = getIn();
+		if(!flag)
+			_wrong--;
+		else
+			_score++;
 	}
+	void putOut(){
+		System.out.println("3");		
+	}
+	boolean getIn(){
+		Scanner in = new Scanner(System.in);
+			String s;
+			s = in.nextLine();
+			return s.equals("3");
+	}	
+		
 }
 class Player {
 	private	int _score;
