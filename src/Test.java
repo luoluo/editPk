@@ -2,7 +2,8 @@ import java.util.*;
 import java.io.*;
 class EditPK {
 	private int _score, _wrong;
-	private String question;
+	private int a, b;
+	private String question, answer;
 	static Random rand = new Random();
 	EditPK(){
 		this(3);
@@ -25,14 +26,17 @@ class EditPK {
 			_score++;
 	}
 	void putOut(){
-		question = "" + rand.nextInt(20); 
+		a = rand.nextInt(100);
+		b = rand.nextInt(100);
+		question = a + "+" + b;
+		answer = "" + (a+b); 
 		System.out.println(question);		
 	}
 	boolean getIn(){
 		Scanner in = new Scanner(System.in);
 			String s;
 			s =  in.nextLine();
-			return s.equals(question);
+			return s.equals(answer);
 	}	
 		
 }
