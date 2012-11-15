@@ -4,13 +4,7 @@ class EditPK {
 	private int _score, _wrong;
 	private int a, b;
 	private String question, answer;
-	private String questions [] = {
-			"fuck",
-			"you",
-			"yes",
-			"no",
-			"ok"
-		};
+	private String questions = "qwertyuiopasdfghjkl;'zxcvbnm,./";
 	static Random rand = new Random();
 	EditPK(){
 		this(3);
@@ -33,9 +27,9 @@ class EditPK {
 			_score++;
 	}
 	void putOut(){
-		a = rand.nextInt(5);
+		a = rand.nextInt(questions.length());
 //		b = rand.nextInt(100);
-		question = questions[a];
+		question = "" + questions.charAt(a);
 		answer = question; 
 		System.out.println(question);		
 	}
